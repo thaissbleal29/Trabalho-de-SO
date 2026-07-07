@@ -8,14 +8,14 @@ int main() {
     // Teste 1: Executar o comando 'ls -l'
     printf("[Teste 1] Rodando: ls -l\n");
     char *comando1[] = {"ls", "-l", NULL};
-    execute_command(comando1);
+    exec_command(comando1);
 
     printf("\n-----------------------------------------\n");
 
     // Teste 2: Executar o comando 'uname -a' (mostra info do sistema)
     printf("[Teste 2] Rodando: uname -a\n");
     char *comando2[] = {"uname", "-a", NULL};
-    execute_command(comando2);
+    exec_command(comando2);
 
     printf("\n--- FIM  ---\n");
     return 0;
