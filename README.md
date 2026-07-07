@@ -1,13 +1,14 @@
 # MeuJarShell
 
-## Descrição do projeto
-
 ## Integrantes
 • André Venâncio Sousa Grangeiro Filho  (564717)
 
 • Lorena de Carvalho Gonçalves (567096)
 
 • Thaís Sousa Barros Leal (565548)
+
+## Descrição do projeto
+
 
 ## Diagrama de blocos geral
 <img width="802" height="508" alt="image" src="https://github.com/user-attachments/assets/dcbd35a9-1a87-48a1-a55a-4a95be9eff1a" />
