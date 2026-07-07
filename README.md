@@ -9,6 +9,10 @@
 
 • Thaís Sousa Barros Leal (565548)
 
+## Diagrama de blocos geral
+<img width="802" height="508" alt="image" src="https://github.com/user-attachments/assets/dcbd35a9-1a87-48a1-a55a-4a95be9eff1a" />
+
+
 ## Diagrama: como os arquivos conversam entre si?
 <img width="483" height="381" alt="image" src="https://github.com/user-attachments/assets/d94af05f-4cf4-4a9f-8b5a-23c69ffaabdd" />
 
