@@ -13,4 +13,5 @@
 
 ## Sistema de Arquivos - HFS+/APFS
 O sistema de arquivos trabalhado pela equipe no seminário foram os sistemas HFS+, e APFS, ambos próprios do S.O. MAC OS.
-Slides da apresentação: https://canva.link/9msjuchhvq31in0
+
+📎 Slides da apresentação: https://canva.link/9msjuchhvq31in0
