@@ -18,11 +18,11 @@ typedef struct {
 // COMANDO HELP - LISTA TODOS OS COMANDOS INTERNOS DISPONÍVEIS
 int builtin_help(char *args[]) {
     printf("Comandos internos:\n");
-    printf("cd <diretorio>\n");
-    printf("exit\n");
-    printf("pwd\n");
-    printf("clear\n");
-    printf("help\n");
+    printf("cd <diretorio>: muda o diretório atual\n");
+    printf("exit: encerra o shell\n");
+    printf("pwd: mostra o diretório atual\n");
+    printf("clear: limpa a tela\n");
+    printf("help: mostra a ajuda\n");
 
     return 1;
 }
