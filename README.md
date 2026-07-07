@@ -8,7 +8,7 @@
 • Thaís Sousa Barros Leal (565548)
 
 ## Descrição do projeto
-O MyJarshell é um intepretador de comandos shell simplificado implementado em C que permite ao usuário executar comandos de um ambiente Linux. O projeto utiliza chamadas de sistema, 
+O MyJarshell é um intepretador de comandos shell simplificado implementado em C que permite ao usuário executar comandos de um ambiente Linux. No projeto, pudemos aplicar conceitos fundamentais de Sistemas Operacionais, como as chamadas de sistema (syscalls) e o gerenciamento de processos. O shell interpreta comandos inseridos pelo usuário
 
 
 ## Diagrama de blocos geral
