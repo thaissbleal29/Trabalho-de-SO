@@ -14,7 +14,7 @@
 
 
 ## Diagrama: como os arquivos conversam entre si?
-<img width="483" height="381" alt="image" src="https://github.com/user-attachments/assets/d94af05f-4cf4-4a9f-8b5a-23c69ffaabdd" />
+<img width="552" height="490" alt="image" src="https://github.com/user-attachments/assets/72c69328-31be-42b9-87f5-cc0289c22c69" />
 
 
 
