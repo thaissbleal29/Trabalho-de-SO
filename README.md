@@ -10,7 +10,8 @@
 • Thaís Sousa Barros Leal (565548)
 
 ## Diagrama: como os arquivos conversam entre si?
-<img width="392" height="313" alt="image" src="https://github.com/user-attachments/assets/3d36d2d3-dbbc-40c4-a909-6295bf98a9bb" />
+<img width="322" height="254" alt="image" src="https://github.com/user-attachments/assets/d94af05f-4cf4-4a9f-8b5a-23c69ffaabdd" />
+
 
 
 ## Sistema de Arquivos - HFS+/APFS
