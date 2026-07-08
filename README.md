@@ -12,15 +12,15 @@ O MeuJarshell é um intepretador de comandos shell simplificado implementado em 
 
 ## Funcionalidades
 Execução de comandos externos
-Comandos internos:
-cd
-pwd
-help
-clear
-exit
+
+Comandos internos: (cd, pwd, help, clear, exit)
+
 Parser para separação de comandos e argumentos
+
 Criação de processos utilizando fork()
+
 Execução de programas utilizando execvp()
+
 Sincronização entre processos utilizando waitpid()
 
 
