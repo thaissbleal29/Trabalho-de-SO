@@ -12,7 +12,8 @@ O MeuJarshell é um intepretador de comandos shell simplificado implementado em 
 
 
 ## Diagrama de blocos geral
-<img width="802" height="508" alt="image" src="https://github.com/user-attachments/assets/dcbd35a9-1a87-48a1-a55a-4a95be9eff1a" />
+<img width="802" height="508" alt="image" src="https://github.com/user-attachments/assets/3e60f426-d073-495c-86c1-67729beabde2" />
+
 
 
 ## Diagrama: como os arquivos conversam entre si?
