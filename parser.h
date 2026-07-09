@@ -9,4 +9,10 @@
 // Realiza o parser da linha digitada
 int parse_command(char *line, char *args[]);
 
+// Verifica se a linha contém um pipe
+int has_pipe(const char *line);
+
+// Realiza o parser da linha com pipe
+int pipe_parse_command(char *line, char *args1[], char *args2[]);
+
 #endif
