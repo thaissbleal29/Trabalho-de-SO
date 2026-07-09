@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include "parser.h"
 #include "executor.h"
 #include "builtins.h"
@@ -8,7 +10,10 @@ int main(void) {
         char *args[MAX_ARGS]; // Vetor que armazena os argumentos
 
         while(1) { // Loop principal do shell
-                printf("MeuJarshell:>"); 
+                char *diretorio_atual = getcwd(NULL, 0); // Obtém o diretório atual
+                printf("MeuJarshell:>%s$ ", diretorio_atual); // Exibe o prompt
+                free(diretorio_atual); // Libera a memória alocada
+
                 if(fgets(line, sizeof(line), stdin) == NULL) { //Lê a linha digitada 
                         break;
                 }
