@@ -104,7 +104,6 @@ void exec_pipe(char *args1[], char *args2[]) {
             exit(EXIT_SUCCESS);
         }
         
-        printf("chegou");
         // Executa o segundo comando
         execvp(args2[0], args2);
         perror("Erro ao executar o segundo comando");
