@@ -17,7 +17,7 @@ Entretanto, para realizar esses testes, o código foi estudado e entendido minuc
 
 Esse é o caso básico: ao receber um input inválido, o shell responde com a mensagem `Erro ao executar comando: No such file or directory`, sem travar ou quebrar o fluxo de execução.
 
-A resposta "Erro ao executar comando" faz parte diretamente do nosso código, enquanto a parte "No such file or directory" vem da função `execvp()` ao não achar o tal comando inválido representado por um diretório no PATH do computador.
+A resposta "Erro ao executar comando" faz parte diretamente do nosso código, enquanto a parte "No such file or directory" vem da função `execvp()` ao não achar o executável correspondente ao comando inválido no PATH do computador.
 
 ### 3.2 Entrada extremamente longa
 
@@ -39,7 +39,7 @@ Já os prompts repetidos (`MeuJarshell:>MeuJarshell:>MeuJarshell:>`) têm a ver 
 
 Comandos com argumentos além do necessário são aceitos sem nenhum aviso. Por exemplo, `cd` aceita múltiplos argumentos e simplesmente ignora os extras:
 
-```
+```shell
 MeuJarshell:>ls
 packettracer-fedora  pasta  QHydro  rock-scissors-and-stuff  teste  Trabalho-de-SO
 MeuJarshell:>cd pasta mais argumentos desnessecarios
@@ -76,9 +76,9 @@ Erro que se dá devido ao fato de que a função `parse_command()` em `parser.c`
 
 ### 3.6 Execução de processos filhos (aplicação gráfica)
 
-Foi testado rodar o Firefox a partir do shell. De modo geral, o comportamento foi bom: consegui interagir com a aplicação sem problemas e digitar comandos inválidos no shell não levou a nenhum tipo de falha.
+Foi testado rodar o Firefox a partir do shell. De modo geral, o comportamento foi bom: foi possívelc interagir com a aplicação sem problemas e digitar comandos inválidos no shell não levou a nenhum tipo de falha.
 
-```
+```shell
 MeuJarshell:>firefox
 restorecon: SELinux: Could not get canonical path for /home/andreV/.config/mozilla/firefox/*/gmp-widevinecdm/* restorecon: No such file or directory.
 teste
@@ -95,9 +95,42 @@ executor.c  main.c      parser.c           test_parser.c
 MeuJarshell:>Erro ao executar comando: No such file or directory
 ```
 
-Isso confirma que o Firefox foi executado como processo filho: a função `exec_command()` em `executor.c` usa `fork()` para criar um novo processo, que substitui sua própria imagem pelo programa solicitado via `execvp()`. O processo pai (o shell) chama `waitpid()` logo em seguida, ficando bloqueado até o processo filho terminar — é justamente por isso que os comandos digitados enquanto o Firefox estava aberto só foram processados depois que ele foi fechado: o shell literalmente não voltava a ler o `stdin` enquanto estava esperando o filho.
+Isso confirma que o Firefox foi executado como processo filho: a função `exec_command()` em `executor.c` usa `fork()` para criar um novo processo, que substitui sua própria imagem pelo programa solicitado via `execvp()`. O processo pai (o shell) chama `waitpid()` logo em seguida, ficando bloqueado até o processo filho terminar — é justamente por isso que os comandos digitados enquanto o Firefox estava aberto só foram processados depois que ele foi fechado: o shell não voltou a ler o a entrada enquanto estava esperando o filho.
 
 Curiosamente, o fato de os comandos serem processados após o encerramento da aplicação, como, por exemplo, o comando `ls` sendo devidamente finalizado, é um comportamento comum, visto que também ocorre no terminal padrão do Fedora.
+
+### 3.7 Execução de prompts com pipeline
+
+De acordo com os testes, prompts que utlizem pipe único (pois o projeto não implementa a funcionalidade de múltiplos pipes) e que não se encaixem em alguma das limitações já citadas neste documento são finalizados com êxito.
+
+- Sucessos:
+
+```shell
+MeuJarshell:>/home/andreV/Documents/GitHub/Trabalho-de-SO$ ifconfig | grep inet
+        inet 127.0.0.1  netmask 255.0.0.0
+```
+
+```shell
+MeuJarshell:>/home/andreV/Documents/GitHub/Trabalho-de-SO$ ls | grep .h
+builtins.h
+executor.h
+parser.h
+```
+
+- Falhas:
+
+```shell
+MeuJarshell:>/home/andreV/Documents/GitHub/Trabalho-de-SO$ ls | grep .c | wc -l
+grep: |: No such file or directory
+grep: wc: No such file or directory
+```
+
+```shell
+MeuJarshell:>/home/andreV/Documents/GitHub/Trabalho-de-SO$ echo "a|b"
+Erro ao executar o segundo comando: No such file or directory
+```
+
+Como se pode observar, entradas que estejão de acordo com a documentação, utilizem elas comandos internos, externos ou um misto dos dois, resultam em sucessos. Entretanto, entradas que tentem utilizar pipeline múltiplo ou o esperem o tratamento do uso de aspas resultarão em erros.
 
 ## 4. Conclusão
 
