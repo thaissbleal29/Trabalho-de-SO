@@ -15,7 +15,7 @@ int main(void) {
         while(1) { // Loop principal do shell
                 char *diretorio_atual = getcwd(NULL, 0); // Obtém o diretório atual
                 printf(AZUL "MeuJarshell" MAGENTA ":>%s" DEFAULT "$ ", diretorio_atual); // Exibe o prompt bonitão po
-                free(diretorio_atual); // Libera a memória alocada
+                free(diretorio_atual); // Libera a memória
 
                 if(fgets(line, sizeof(line), stdin) == NULL) { //Lê a linha digitada 
                         break;

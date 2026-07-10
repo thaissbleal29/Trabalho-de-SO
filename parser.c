@@ -37,6 +37,7 @@ int has_pipe(const char *line) {
     return strchr(line, '|') != NULL;
 }
 
+// Realiza o parser da linha com pipe
 int pipe_parse_command(char *line, char *args1[], char *args2[]) {
     char *pipe_pos = strchr(line, '|');
     if (pipe_pos == NULL) {
@@ -52,5 +53,5 @@ int pipe_parse_command(char *line, char *args1[], char *args2[]) {
     parse_command(command1, args1);
     parse_command(command2, args2);
 
-    return 1; // Indica que há um pipe na linha
+    return 1;
 }
