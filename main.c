@@ -5,12 +5,16 @@
 #include "executor.h"
 #include "builtins.h"
 
+#define AZUL    "\x1b[34m"
+#define MAGENTA "\x1b[35m"
+#define DEFAULT   "\x1b[0m"
+
 int main(void) {
         char line[MAX_LINE]; // Linha digitada pelo usuário
 
         while(1) { // Loop principal do shell
                 char *diretorio_atual = getcwd(NULL, 0); // Obtém o diretório atual
-                printf("MeuJarshell:>%s$ ", diretorio_atual); // Exibe o prompt
+                printf(AZUL "MeuJarshell" MAGENTA ":>%s" DEFAULT "$ ", diretorio_atual); // Exibe o prompt bonitão po
                 free(diretorio_atual); // Libera a memória alocada
 
                 if(fgets(line, sizeof(line), stdin) == NULL) { //Lê a linha digitada 
