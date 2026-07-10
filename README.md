@@ -30,7 +30,7 @@ O MeuJarshell é um intepretador de comandos shell simplificado implementado em 
 
 ## Diagrama de blocos geral
 
-![](/home/andreV/.config/marktext/images/2026-07-09-23-53-00-início.png)
+<img width="1301" height="1013" alt="início" src="https://github.com/user-attachments/assets/04f71c93-cec8-4095-b067-349edd82a497" />
 
 ## Diagrama: como os arquivos conversam entre si?
 
