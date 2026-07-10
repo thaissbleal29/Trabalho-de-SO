@@ -12,21 +12,15 @@
 
 O MeuJarshell é um intepretador de comandos shell simplificado implementado em C que permite ao usuário executar comandos de um ambiente Linux. No projeto, pudemos aplicar conceitos fundamentais de Sistemas Operacionais, como as chamadas de sistema (syscalls) e o gerenciamento de processos. O shell interpreta comandos inseridos pelo usuário identifica comandos internos e executa programas externos através das syscalls fork(), execvp() e waitpid(). Além disso, o projeto oferece suporte para pipes simples, permitindo que a saída de um comando seja utilizada como entrada de outro, utilizando as syscalls pipe(), dup2() e close().
 
-## Funcionalidades
+## Objetivos
 
-• Execução de comandos externos
+• Aplicar os conceitos práticos de Sistemas Operacionais desenvolvidos em C. 
 
-• Comandos internos: (cd, pwd, help, clear, exit)
+• Gerenciar processos e fluxos de execução através do domínio das chamadas de sistema fork(), execvp() e waitpid().  
 
-• Execução de comandos utilizando pipe único
+• Construir um interpretador funcional que processe comandos Linux externos e forneça utilitários nativos básicos, como cd, pwd, help, clear e exit.  
 
-• Parser para separação de comandos e argumentos
-
-• Criação de processos utilizando fork()
-
-• Execução de programas utilizando execvp()
-
-• Sincronização entre processos utilizando waitpid()
+• Estabelecer comunicação entre processos utilizando pipeline simples por meio das syscalls pipe(), dup2() e close()
 
 ## Diagrama de blocos geral
 
@@ -43,3 +37,7 @@ O sistema de arquivos trabalhado pela equipe no seminário foram os sistemas HFS
 Slides da apresentação:
 
 🖇️ https://canva.link/9msjuchhvq31in0
+
+## Uso de IA
+
+Utilizamos a IA para auxiliar na divisão de tarefas para cada membro, e na organização geral do projeto. 
